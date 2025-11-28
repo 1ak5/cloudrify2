@@ -180,7 +180,11 @@ ul {
     align-items: center;
     text-align: center;
     position: relative;
-    padding-top: 60px;
+    padding: 60px 20px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    overflow: hidden;
 }
 
 .hero-bg {
@@ -489,6 +493,7 @@ ul {
     margin-bottom: 60px;
     height: 700px;
     background: #111;
+    display: none;
 }
 
 .project-feature img {

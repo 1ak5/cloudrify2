@@ -138,6 +138,26 @@ section {
         width: 100%;
     }
 
+    .project-feature {
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 360px;
+        position: relative;
+    }
+
+    .project-feature img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-feature .center-pill {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
     .project-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
