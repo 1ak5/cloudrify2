@@ -95,10 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Parallax Effect for Hero Background
     const heroBg = document.querySelector('.hero-bg');
     if (heroBg) {
-        window.addEventListener('scroll', () => {
+        const handleParallax = () => {
             const scrolled = window.pageYOffset;
             heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
+        };
+
+        let parallaxActive = false;
+
+        const syncParallaxState = () => {
+            if (window.innerWidth > 768) {
+                if (!parallaxActive) {
+                    window.addEventListener('scroll', handleParallax);
+                    parallaxActive = true;
+                    handleParallax();
+                }
+            } else if (parallaxActive) {
+                window.removeEventListener('scroll', handleParallax);
+                parallaxActive = false;
+                heroBg.style.transform = '';
+            }
+        };
+
+        syncParallaxState();
+        window.addEventListener('resize', syncParallaxState);
     }
 
     // Enhanced FAQ Accordion with smooth animation
